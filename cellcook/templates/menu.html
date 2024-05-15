@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Menu Recommendations</h1>
+  <ul>
+    {% for menu in menus %}
+      <li>{{ menu }}</li>
+    {% empty %}
+      <li>추천할 메뉴가 없습니다.</li>
+    {% endfor %}
+  </ul>
+<form method="POST" action="{% url 'get_recipe_details' %}">
+  {% csrf_token %}
+  <label for="selected_menu">Enter a menu item:</label>
+  <input type="text" id="selected_menu" name="selected_menu">
+  <button type="submit">Get Recipe Details</button>
+</form>
+{% endblock %}

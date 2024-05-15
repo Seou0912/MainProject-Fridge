@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 300px;
+            padding: 16px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 50px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        .container h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .container form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .container form button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .container form button:hover {
+            background-color: #0056b3;
+            width: 100%;
+        }
+        .checkbox-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .checkbox-container input {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign up</h1>
+        <form method="post" >
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="ID" required>
+            <input
+            type="password"
+            class="form-control"
+            id="password1"
+            name="password"
+            placeholder="password"
+            required
+            />
+            <input type="password" id="confirm_password1" name="confirm_password" placeholder="Confirm Password" required>
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="nickname" placeholder="Nickname" required>
+            <div class="checkbox-container">
+                <label for="vegitarian">Vegitarian</label>
+                <input type="checkbox" id="vegitarian" name="vegitarian" value="베지테리언">
+
+            </div>
+            <button type="submit">Sign Up</button>
+
+        </form>
+        <a href="/login" class="login-button">Login</a>
+
+        <script>
+            function validatePassword() {
+                var password = document.getElementById('password1').value;
+                var confirmPassword = document.getElementById('password2').value;
+                var regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+            
+                if (!regex.test(password)) {
+                    alert('Password must contain at least one digit, one special character, and be at least 8 characters long.');
+                    return false;
+                }
+            
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match.');
+                    return false;
+                }
+            
+                return true;
+            }
+            </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "selfcooking"
+version = "0.1.0"
+description = ""
+authors = ["Seou0912 <myuni0912@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.6"
+djangorestframework = "^3.15.1"
+djangorestframework-simplejwt = "^5.3.1"
+django-allauth = "^0.62.1"
+django-extensions = "^3.2.3"
+simplejwt = "^2.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>재료 추가</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label for="ingredient_id">재료 ID</label>
+    <input type="text" id="ingredient_id" name="ingredient_id" placeholder="재료 ID" required>
+
+    <label for="ingredient_name">재료 이름</label>
+    <input type="text" id="ingredient_name" name="ingredient_name" placeholder="재료 이름" required>
+
+    <label for="ingredient_type">재료 유형</label>
+    <input type="text" id="ingredient_type" name="ingredient_type" placeholder="재료 유형" required>
+
+    <label for="expiration_date">유통기한</label>
+    <input type="date" id="expiration_date" name="expiration_date" placeholder="유통기한" required>
+
+    <button type="submit">추가</button>
+  </form>
+{% endblock %}
