@@ -1,6 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,images,database,django,intellij,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,images,database,django,intellij,pycharm
-cellcook/.config_secret/*
+.config_secret/*
 
 ### Database ###
 *.accdb
