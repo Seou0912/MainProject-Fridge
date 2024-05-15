@@ -1,6 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,images,database,django,intellij,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,images,database,django,intellij,pycharm
-.config_secret/*
+cellcook/.config_secret/*
 
 ### Database ###
 *.accdb
@@ -144,7 +144,7 @@ celerybeat.pid
 
 # Environments
 .env
-.venv
+../.venv
 env/
 venv/
 ENV/
